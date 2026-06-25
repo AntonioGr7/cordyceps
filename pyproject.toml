@@ -1,0 +1,29 @@
+[project]
+name = "cordyceps"
+version = "0.0.1"
+description = "A recursive, code-action agent and problem-decomposition substrate. The base unit is a SOTA agent whose only action is running code, with capabilities exposed as REPL functions and spawn() for recursive decomposition."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+dependencies = [
+    "anthropic>=0.40",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+openai = ["openai>=1.40"]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.6",
+    "python-dotenv==1.2.2"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cordyceps"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -6,6 +6,8 @@ __pycache__/
 # C extensions
 *.so
 
+runs/*
+
 # Distribution / packaging
 .Python
 build/
@@ -216,3 +218,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Cordyceps run artifacts (workspaces, logs, outputs)
+data/
